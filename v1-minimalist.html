@@ -23,8 +23,11 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 2rem 4rem;
-      mix-blend-mode: normal;
+      padding: 1.4rem 4rem;
+      background: rgba(10,10,10,0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
@@ -66,7 +69,7 @@
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.72) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,.25) 0%, rgba(0,0,0,.1) 35%, rgba(0,0,0,.65) 100%);
     }
     .hero-content {
       position: absolute; bottom: 12vh; left: 4rem;
