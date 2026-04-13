@@ -34,9 +34,14 @@
     .nav-inner {
       width: 100%; display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
-    .nav-logo img { height: 30px; filter: brightness(10); }
-    .nav-logo-text { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.4); }
+    .nav-logo { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
+    .nav-logo-name {
+      font-family: 'Space Mono', monospace;
+      font-size: .95rem; font-weight: 700; letter-spacing: .06em;
+      color: #fff;
+    }
+    .nav-logo-name span { color: var(--accent); }
+    .nav-logo-sub { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35); }
     .nav-links { display: flex; gap: 0; list-style: none; }
     .nav-links li a {
       display: block; padding: 0 1.3rem; height: 64px; line-height: 64px;
@@ -355,8 +360,8 @@
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#">
-      <img src="https://imo-star98.com/wp-content/uploads/2018/06/imo-star-98.gif" alt="IMO-STAR 98" />
-      <span class="nav-logo-text">s.r.o.</span>
+      <span class="nav-logo-name">IMO-STAR <span>98</span></span>
+      <span class="nav-logo-sub">s.r.o.</span>
     </a>
     <ul class="nav-links">
       <li><a href="#">O firmě</a></li>

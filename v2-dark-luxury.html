@@ -38,8 +38,11 @@
     .nav-brand {
       display: flex; align-items: center; gap: 1rem;
       text-decoration: none;
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.1rem; letter-spacing: .08em;
+      color: var(--text);
     }
-    .nav-brand img { height: 36px; filter: brightness(2) sepia(1) hue-rotate(5deg) saturate(1.5); }
+    .nav-brand span { color: var(--gold); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
@@ -307,7 +310,7 @@
 
 <nav>
   <a class="nav-brand" href="#">
-    <img src="https://imo-star98.com/wp-content/uploads/2018/06/imo-star-98.gif" alt="IMO-STAR 98" />
+    IMO-STAR <span>98</span>
   </a>
   <ul class="nav-links">
     <li><a href="#">O firmě</a></li>

@@ -26,25 +26,32 @@
       padding: 2rem 4rem;
       mix-blend-mode: normal;
     }
-    .nav-logo img { height: 40px; filter: invert(1); }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: #fff; letter-spacing: .08em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       text-decoration: none;
       font-size: .8rem;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--off-white);
+      color: rgba(255,255,255,.85);
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--accent); }
     .nav-cta {
       padding: .6rem 1.8rem;
-      border: 1px solid rgba(255,255,255,.5);
-      color: var(--off-white) !important;
+      border: 1.5px solid #fff;
+      color: #fff !important;
       border-radius: 2px;
+      font-weight: 500 !important;
       transition: background .2s, color .2s !important;
     }
-    .nav-cta:hover { background: var(--off-white) !important; color: var(--black) !important; }
+    .nav-cta:hover { background: #fff !important; color: var(--black) !important; }
 
     /* HERO */
     .hero {
@@ -59,7 +66,7 @@
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,.55) 100%);
+      background: linear-gradient(to bottom, rgba(0,0,0,.15) 0%, rgba(0,0,0,.72) 100%);
     }
     .hero-content {
       position: absolute; bottom: 12vh; left: 4rem;
@@ -71,37 +78,41 @@
     }
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 300;
+      font-size: clamp(3.2rem, 6.5vw, 6rem);
+      font-weight: 400;
       line-height: 1.1;
-      color: var(--off-white);
+      color: #fff;
       margin-bottom: 1.8rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,.3);
     }
     .hero-title em { font-style: italic; color: var(--accent); }
     .hero-sub {
-      font-size: .95rem; color: rgba(255,255,255,.75);
-      line-height: 1.7; max-width: 480px;
+      font-size: 1.05rem; color: rgba(255,255,255,.92);
+      line-height: 1.75; max-width: 480px;
       margin-bottom: 2.5rem;
+      text-shadow: 0 1px 8px rgba(0,0,0,.4);
     }
     .btn {
       display: inline-block;
-      padding: .9rem 2.6rem;
-      background: var(--accent);
-      color: #fff;
+      padding: 1rem 2.8rem;
+      background: #fff;
+      color: var(--black);
       text-decoration: none;
       font-size: .8rem;
-      letter-spacing: .1em;
+      font-weight: 600;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      transition: background .2s;
+      transition: background .2s, color .2s;
     }
-    .btn:hover { background: #b8936a; }
+    .btn:hover { background: var(--accent); color: #fff; }
     .btn-outline {
       background: transparent;
-      border: 1px solid rgba(255,255,255,.6);
+      border: 2px solid rgba(255,255,255,.85);
       margin-left: 1rem;
       color: #fff;
+      font-weight: 500;
     }
-    .btn-outline:hover { background: rgba(255,255,255,.1); }
+    .btn-outline:hover { background: rgba(255,255,255,.15); border-color: #fff; }
 
     /* NUMBERS */
     .numbers {
@@ -297,7 +308,7 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#"><img src="https://imo-star98.com/wp-content/uploads/2018/06/imo-star-98.gif" alt="IMO-STAR 98" /></a>
+  <a class="nav-logo" href="#">IMO-STAR<span> 98</span></a>
   <ul class="nav-links">
     <li><a href="#">O firmě</a></li>
     <li><a href="#">Projekty</a></li>
