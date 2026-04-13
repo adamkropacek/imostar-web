@@ -24,10 +24,23 @@
 
     /* Nav */
     .navbar {
-      background: rgba(250,248,244,0.95);
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(250,248,244,0.96);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(184,149,90,0.15);
     }
+    .navbar .nav-link { color: rgba(255,255,255,0.75); }
+    .navbar .nav-link:hover { color: var(--gold); }
+    .navbar.scrolled .nav-link { color: var(--text-muted); }
+    .navbar.scrolled .nav-link:hover { color: var(--gold); }
+    .navbar .logo-text { color: white; }
+    .navbar .logo-sub { color: rgba(255,255,255,0.45); }
+    .navbar.scrolled .logo-text { color: var(--dark); }
+    .navbar.scrolled .logo-sub { color: var(--text-muted); }
 
     /* Hero */
     .hero {
@@ -249,19 +262,19 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar fixed top-0 left-0 right-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+  <nav class="navbar fixed top-0 left-0 right-0 z-50" id="main-nav">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-5 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
         <div class="flex flex-col leading-none">
-          <span class="serif text-xl font-semibold tracking-wide text-dark" style="color:var(--dark)">IMO-STAR <span class="text-gold">98</span></span>
-          <span class="text-xs tracking-widest uppercase" style="color:var(--text-muted); font-size:9px; letter-spacing:0.2em">INTERIÉRY & DEVELOPMENT</span>
+          <span class="serif text-xl font-semibold tracking-wide logo-text">IMO-STAR <span class="text-gold">98</span></span>
+          <span class="logo-sub text-xs tracking-widest uppercase" style="font-size:9px; letter-spacing:0.2em">INTERIÉRY & DEVELOPMENT</span>
         </div>
       </a>
-      <div class="hidden md:flex items-center gap-8 text-sm" style="color:var(--text-muted)">
-        <a href="#sluzby" class="hover:text-gold transition-colors" style="transition:color 0.2s">Služby</a>
-        <a href="#projekty" class="hover:text-gold transition-colors">Projekty</a>
-        <a href="#o-nas" class="hover:text-gold transition-colors">O nás</a>
-        <a href="#kontakt" class="hover:text-gold transition-colors">Kontakt</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#sluzby" class="nav-link transition-colors" style="transition:color 0.2s">Služby</a>
+        <a href="#projekty" class="nav-link transition-colors">Projekty</a>
+        <a href="#o-nas" class="nav-link transition-colors">O nás</a>
+        <a href="#kontakt" class="nav-link transition-colors">Kontakt</a>
       </div>
       <a href="#kontakt" class="btn-gold px-5 py-2.5 text-sm font-medium rounded-sm tracking-wide">
         Nezávazná konzultace
@@ -275,15 +288,15 @@
     <div class="hero-overlay"></div>
     <div class="hero-glow"></div>
     <div class="hero-glow-2"></div>
-    <div class="max-w-6xl mx-auto w-full relative z-10 pt-24 md:pt-28 pb-10">
+    <div class="max-w-6xl mx-auto w-full relative z-10 pt-28 md:pt-32 pb-6">
       <div class="max-w-3xl">
-        <div class="section-label mb-6 fade-up">Od roku 1998 — Hradec Králové & Praha</div>
-        <h1 class="serif text-4xl md:text-6xl lg:text-7xl font-light text-white leading-tight mb-6 fade-up d1">
+        <div class="section-label mb-4 fade-up">Od roku 1998 — Hradec Králové & Praha</div>
+        <h1 class="serif text-4xl md:text-6xl lg:text-7xl font-light text-white leading-tight mb-4 fade-up d1">
           Váš domov,<br>
           <em class="text-gold not-italic">tak jak jste</em><br>
           vždy chtěli.
         </h1>
-        <p class="text-base leading-relaxed mb-10 fade-up d2" style="color:#9A9088; max-width:480px">
+        <p class="text-base leading-relaxed mb-7 fade-up d2" style="color:#9A9088; max-width:480px">
           Navrhujeme, rekonstruujeme a realizujeme interiéry bytů, rodinných domů i sídel firem. Kompletně. Na klíč. Více než 26 let zkušeností ve vašich rukou.
         </p>
         <div class="flex flex-wrap gap-4 fade-up d3">
@@ -297,7 +310,7 @@
       </div>
 
       <!-- Stats bar -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-0 mt-20 mb-4 fade-up d4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-0 mt-10 md:mt-14 fade-up d4">
         <div class="stat-item pl-6 pb-6">
           <div class="serif text-3xl md:text-5xl font-light text-white">26+</div>
           <div class="text-xs mt-1 tracking-widest uppercase" style="color:#6A6058">let zkušeností</div>
@@ -665,6 +678,16 @@
         a.style.color = a.getAttribute('href') === '#' + current ? '#B8955A' : '';
       });
     });
+
+    // ── NAVBAR SCROLL BEHAVIOUR ────────────────────────────────
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
 
     // ── SCROLL REVEAL ──────────────────────────────────────────
     const revealEls = document.querySelectorAll('.reveal');
