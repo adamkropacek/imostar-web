@@ -171,6 +171,22 @@
       border-radius: 2px;
     }
 
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal.delay-1 { transition-delay: 0.1s; }
+    .reveal.delay-2 { transition-delay: 0.2s; }
+    .reveal.delay-3 { transition-delay: 0.3s; }
+    .reveal.delay-4 { transition-delay: 0.4s; }
+    .reveal.delay-5 { transition-delay: 0.5s; }
+
     /* Project cards — V4 style adapted to V0 */
     .proj-card-v0 {
       background: white;
@@ -305,7 +321,7 @@
   <!-- SERVICES -->
   <section id="sluzby" class="py-14 md:py-24 px-4 md:px-6" style="background:var(--cream)">
     <div class="max-w-6xl mx-auto">
-      <div class="flex items-start justify-between mb-16 flex-wrap gap-6">
+      <div class="flex items-start justify-between mb-16 flex-wrap gap-6 reveal">
         <div>
           <div class="section-label mb-4">Co děláme</div>
           <h2 class="serif text-3xl md:text-5xl font-light leading-tight">
@@ -320,7 +336,7 @@
       <div class="grid md:grid-cols-3 gap-6">
 
         <!-- Interiérový design -->
-        <div class="service-card rounded-sm p-8">
+        <div class="service-card rounded-sm p-8 reveal delay-1">
           <div class="service-icon w-12 h-12 border border-gold rounded-sm flex items-center justify-center mb-6 transition-all duration-300" style="border-color:rgba(184,149,90,0.4)">
             <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="color:var(--gold)">
               <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/>
@@ -345,7 +361,7 @@
         </div>
 
         <!-- Rekonstrukce -->
-        <div class="service-card rounded-sm p-8">
+        <div class="service-card rounded-sm p-8 reveal delay-2">
           <div class="service-icon w-12 h-12 border border-gold rounded-sm flex items-center justify-center mb-6 transition-all duration-300" style="border-color:rgba(184,149,90,0.4)">
             <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="color:var(--gold)">
               <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
@@ -370,7 +386,7 @@
         </div>
 
         <!-- Development -->
-        <div class="service-card rounded-sm p-8" style="background: var(--dark); border-color: rgba(184,149,90,0.3)">
+        <div class="service-card rounded-sm p-8 reveal delay-3" style="background: var(--dark); border-color: rgba(184,149,90,0.3)">
           <div class="w-12 h-12 border rounded-sm flex items-center justify-center mb-6" style="border-color:rgba(184,149,90,0.4)">
             <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" style="color:var(--gold)">
               <rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M2 12h20"/>
@@ -401,7 +417,7 @@
   <!-- PROJECTS -->
   <section id="projekty" style="background: var(--cream); padding: 5rem 1.5rem;">
     <div class="max-w-6xl mx-auto">
-      <div class="flex items-end justify-between mb-14 flex-wrap gap-4">
+      <div class="flex items-end justify-between mb-14 flex-wrap gap-4 reveal">
         <div>
           <div class="section-label mb-4">Realizace</div>
           <h2 class="serif text-3xl md:text-5xl font-light">Projekty, na které jsme hrdí</h2>
@@ -410,7 +426,7 @@
       </div>
       <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="proj-card-v0">
+        <div class="proj-card-v0 reveal delay-1">
           <div class="proj-card-v0-img"><img src="https://imo-star98.com/wp-content/uploads/2021/02/patrovy_RD-1024x576.jpg" alt="RD Nová Pálenecká II" /></div>
           <div class="proj-card-v0-body">
             <div class="proj-card-v0-year">Aktuální · 2021</div>
@@ -420,7 +436,7 @@
           </div>
         </div>
 
-        <div class="proj-card-v0">
+        <div class="proj-card-v0 reveal delay-2">
           <div class="proj-card-v0-img"><img src="https://imo-star98.com/wp-content/uploads/2018/06/NADHLED-Z-JIHU_1web-1024x576.jpg" alt="RD Nová Pálenecká" /></div>
           <div class="proj-card-v0-body">
             <div class="proj-card-v0-year">Dokončeno · 2018–2020</div>
@@ -430,7 +446,7 @@
           </div>
         </div>
 
-        <div class="proj-card-v0">
+        <div class="proj-card-v0 reveal delay-3">
           <div class="proj-card-v0-img"><img src="https://imo-star98.com/wp-content/uploads/2016/01/Sukovy3-2-1024x683.jpg" alt="Rezidence Sukovy Sady" /></div>
           <div class="proj-card-v0-body">
             <div class="proj-card-v0-year">Dokončeno · 2016–2017</div>
@@ -440,7 +456,7 @@
           </div>
         </div>
 
-        <div class="proj-card-v0">
+        <div class="proj-card-v0 reveal delay-1">
           <div class="proj-card-v0-img"><img src="https://imo-star98.com/wp-content/uploads/2018/06/20150820_093803-1024x740.jpg" alt="BD Slunečná" /></div>
           <div class="proj-card-v0-body">
             <div class="proj-card-v0-year">Dokončeno · 2014–2015</div>
@@ -450,7 +466,7 @@
           </div>
         </div>
 
-        <div class="proj-card-v0">
+        <div class="proj-card-v0 reveal delay-2">
           <div class="proj-card-v0-img"><img src="https://imo-star98.com/wp-content/uploads/2018/06/Plotiste4-1024x683.jpg" alt="BD Plotiště" /></div>
           <div class="proj-card-v0-body">
             <div class="proj-card-v0-year">Dokončeno · 2013–2014</div>
@@ -460,7 +476,7 @@
           </div>
         </div>
 
-        <div class="proj-card-v0">
+        <div class="proj-card-v0 reveal delay-3">
           <div class="proj-card-v0-img"><img src="https://imo-star98.com/wp-content/uploads/2011/01/Svoboda4-1024x768.jpg" alt="Apartmány Svoboda" /></div>
           <div class="proj-card-v0-body">
             <div class="proj-card-v0-year">Dokončeno · 2009–2011</div>
@@ -477,7 +493,7 @@
   <!-- WHY US -->
   <section id="o-nas" class="py-14 md:py-24 px-4 md:px-6" style="background:var(--warm-gray)">
     <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-10 md:mb-16">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-10 md:mb-16 reveal">
         <div>
           <div class="section-label mb-4">Proč my</div>
           <h2 class="serif text-3xl md:text-5xl font-light leading-tight">
@@ -490,22 +506,22 @@
       </div>
 
       <div class="grid md:grid-cols-4 gap-8">
-        <div class="pillar pt-6">
+        <div class="pillar pt-6 reveal delay-1">
           <div class="serif text-3xl font-medium mb-3 text-gold">01</div>
           <h3 class="font-semibold text-base mb-2" style="color:var(--dark)">Individuální přístup</h3>
           <p class="text-sm leading-relaxed" style="color:var(--text-muted)">Každá nemovitost je jiná. Přizpůsobujeme se vašim přáním — od standardu po nadstandard.</p>
         </div>
-        <div class="pillar pt-6">
+        <div class="pillar pt-6 reveal delay-2">
           <div class="serif text-3xl font-medium mb-3 text-gold">02</div>
           <h3 class="font-semibold text-base mb-2" style="color:var(--dark)">Ověření dodavatelé</h3>
           <p class="text-sm leading-relaxed" style="color:var(--text-muted)">26 let praxe nám dalo síť spolehlivých partnerů. Nabízíme nadstandardní záruky.</p>
         </div>
-        <div class="pillar pt-6">
+        <div class="pillar pt-6 reveal delay-3">
           <div class="serif text-3xl font-medium mb-3 text-gold">03</div>
           <h3 class="font-semibold text-base mb-2" style="color:var(--dark)">Vlastní technický dozor</h3>
           <p class="text-sm leading-relaxed" style="color:var(--text-muted)">Za každou zakázkou stojí náš technický dozor. Kvalita není jen příslib — je kontrolovaná.</p>
         </div>
-        <div class="pillar pt-6">
+        <div class="pillar pt-6 reveal delay-4">
           <div class="serif text-3xl font-medium mb-3 text-gold">04</div>
           <h3 class="font-semibold text-base mb-2" style="color:var(--dark)">Výhodné ceny</h3>
           <p class="text-sm leading-relaxed" style="color:var(--text-muted)">Optimalizujeme procesy, abychom vám za vaše peníze dodali odpovídající produkt bez skrytých poplatků.</p>
@@ -517,8 +533,8 @@
   <!-- TESTIMONIAL / QUOTE -->
   <section style="background:var(--dark); padding: 4rem 1rem">
     <div class="max-w-3xl mx-auto text-center">
-      <div class="gold-line mx-auto mb-8"></div>
-      <blockquote class="serif text-2xl md:text-4xl font-light text-white leading-relaxed mb-8">
+      <div class="gold-line mx-auto mb-8 reveal"></div>
+      <blockquote class="serif text-2xl md:text-4xl font-light text-white leading-relaxed mb-8 reveal delay-1">
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em class="text-gold">Sed do eiusmod tempor</em> incididunt ut labore et dolore magna aliqua."
       </blockquote>
       <div class="text-sm tracking-widest uppercase" style="color:var(--text-muted)">— Jméno · Funkce · IMO-STAR 98</div>
@@ -529,7 +545,7 @@
   <!-- CONTACT -->
   <section id="kontakt" class="py-14 md:py-24 px-4 md:px-6" style="background:var(--cream)">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-14">
+      <div class="text-center mb-14 reveal">
         <div class="section-label mb-4">Začněme</div>
         <h2 class="serif text-3xl md:text-5xl font-light">Nezávazná konzultace</h2>
         <p class="text-sm mt-4 max-w-md mx-auto" style="color:var(--text-muted)">Ozveme se vám do dalšího pracovního dne s konkrétním návrhem dalšího postupu.</p>
@@ -649,6 +665,18 @@
         a.style.color = a.getAttribute('href') === '#' + current ? '#B8955A' : '';
       });
     });
+
+    // ── SCROLL REVEAL ──────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
   </script>
 
 </body>
