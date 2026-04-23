@@ -41,9 +41,8 @@
     .navbar .logo-sub { color: rgba(255,255,255,0.45); }
     .navbar.scrolled .logo-text { color: var(--dark); }
     .navbar.scrolled .logo-sub { color: var(--text-muted); }
-    /* Logo image: white on hero, original colors when scrolled */
-    .navbar #nav-logo { filter: brightness(0) invert(1); transition: filter 0.35s ease; }
-    .navbar.scrolled #nav-logo { filter: none; }
+    /* Logo image: sage green + white text — works on both dark hero and light scrolled nav */
+    .navbar #nav-logo { transition: filter 0.35s ease; }
 
     /* Hero */
     .hero {
@@ -59,15 +58,15 @@
       background-image: url('https://imo-star98.com/wp-content/uploads/2018/07/NADHLED-ZE-Z%C3%81PADU-2.jpg');
       background-size: cover;
       background-position: center 40%;
-      filter: brightness(0.52);
+      filter: brightness(0.72);
     }
     .hero-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(
         105deg,
-        rgba(42,30,20,0.65) 0%,
-        rgba(42,30,20,0.28) 50%,
-        rgba(42,30,20,0.38) 100%
+        rgba(28,20,14,0.72) 0%,
+        rgba(28,20,14,0.32) 48%,
+        rgba(28,20,14,0.18) 100%
       );
     }
     .hero-glow {
@@ -268,9 +267,9 @@
   <nav class="navbar fixed top-0 left-0 right-0 z-50" id="main-nav">
     <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-5 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
-        <img id="nav-logo" src="https://imo-star98.com/wp-content/uploads/2018/06/imo-star-98.gif"
+        <img id="nav-logo" src="logo-green.png"
              alt="IMO-STAR 98"
-             style="height:40px; width:auto; object-fit:contain;"
+             style="height:48px; width:auto; object-fit:contain;"
              onerror="this.style.display='none'; document.getElementById('nav-logo-text').style.display='flex';">
         <div id="nav-logo-text" class="flex flex-col leading-none" style="display:none">
           <span class="serif text-xl font-semibold tracking-wide logo-text">IMO-STAR <span class="text-gold">98</span></span>
